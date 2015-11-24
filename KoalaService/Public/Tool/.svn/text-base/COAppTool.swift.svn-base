@@ -1,0 +1,77 @@
+//
+//  COAppTool.swift
+//  COXbry
+//
+//  Created by carlosk on 15/1/19.
+//  Copyright (c) 2015年 carlosk. All rights reserved.
+//
+
+import UIKit
+
+
+public class COAppTool  {
+	
+	public class func getLauchImage()->UIImage?{
+		//获取当前设备所适配的laughimage
+//			NSString *suffix = nil;
+		var suffix = ""
+//		if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone {
+			suffix = UIScreen.mainScreen().bounds.size.height >= 568.0 ? "-568h@2x" : "@2x"
+//		}else{
+//			let or = UIApplication.sharedApplication().statusBarOrientation
+//				suffix = UIInterfaceOrientationIsPortrait(or) ? "-Portrait" : "-Landscape"
+//				suffix = UIScreen.mainScreen().scale == 2.0 ? suffix.stringByAppendingString("@2x~ipad") : suffix.stringByAppendingString("@~ipad")
+//		}
+		let lauchImageName = "LaunchImage-700\(suffix).png"
+		return UIImage(named: lauchImageName)
+//			if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+//				suffix = [[UIScreen mainScreen] bounds].size.height >= 568.0f ? @"-568h@2x" : @"@2x";
+//			}
+//			else {
+//				UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+//				suffix = UIInterfaceOrientationIsPortrait(orientation) ? @"-Portrait" : @"-Landscape";
+//				suffix = [UIScreen mainScreen].scale == 2.0 ? [suffix stringByAppendingString:@"@2x~ipad"] : [suffix stringByAppendingString:@"~ipad"];
+//			}
+//			
+//			NSString *launchImageName = [NSString stringWithFormat:@"LaunchImage-700%@.png",suffix];
+//			return launchImageName;
+
+	}
+	//app的名称
+	public class func appName() -> String{
+		let info = NSBundle.mainBundle().infoDictionary!
+		var value: AnyObject? = info["CFBundleDisplayName"]
+		if let value1: AnyObject = value {
+			return value1 as! String
+		}
+		value  = info["CFBundleName"]
+		return value as! String
+	}
+	//获取appicon的名称
+	public class func getAppIconName()->String{
+		let primaryIconsDictionary = NSBundle.mainBundle().infoDictionary?["CFBundleIcons"]?["CFBundlePrimaryIcon"] as? NSDictionary
+		let iconFiles = primaryIconsDictionary!["CFBundleIconFiles"] as! NSArray
+		let lastIcon = iconFiles.lastObject as! NSString
+		return lastIcon as String
+	}
+	//版本名称
+	public class func appVersionName() -> String{
+		let info = NSBundle.mainBundle().infoDictionary!
+		let value :AnyObject = info["CFBundleShortVersionString"]!
+		return value as! String
+	}
+	//版本号
+	public class func appVersionCode() -> String{
+		let info = NSBundle.mainBundle().infoDictionary!
+		let value :AnyObject = info["CFBundleVersion"]!
+		return value as! String
+	}
+//拨打电话
+	public class func callPhone(var phoneName:String){
+		phoneName = phoneName.stringByReplacingOccurrencesOfString("-", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+		phoneName = phoneName.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+		let phoneUrl = NSURL(string: "tel://\(phoneName)")
+		UIApplication.sharedApplication().openURL(phoneUrl!)
+	}
+
+}

@@ -1,0 +1,33 @@
+//
+//  NSDate+TY.swift
+//  TYCloudAlarm
+//
+//  Created by carlosk on 15/3/1.
+//  Copyright (c) 2015年 carlosk. All rights reserved.
+//
+
+import UIKit
+
+extension NSDate{
+	//获取今天中午
+	class func getTodayNoon()->NSDate{
+//		NSCalendar *myCal = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+		let myCal = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+
+		let units: NSCalendarUnit = [NSCalendarUnit.Day, NSCalendarUnit.Year, NSCalendarUnit.NSMonthCalendarUnit]
+//		 || NSCalendarUnit.DayCalendarUnit ||NSCalendarUnit.YearCalendarUnit
+//
+//		unsigned units  = NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit;
+//		NSDateComponents *comp1 = [myCal components:units fromDate:[NSDate date]];
+//		comp1.hour = 0;
+//		comp1.minute = 0;
+//		comp1.second = 0;
+		let comp = myCal!.components(units, fromDate: NSDate(timeIntervalSinceNow: 0))
+		comp.hour = 12
+		comp.minute = 0
+		comp.second = 0
+		let date = myCal!.dateFromComponents(comp)!
+		return date
+
+	}
+}

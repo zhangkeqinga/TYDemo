@@ -1,0 +1,21 @@
+//
+//  COAPIEnum.swift
+//  MyFramework_Swift
+//
+//  Created by carlosk on 15/2/6.
+//  Copyright (c) 2015年 carlosk. All rights reserved.
+//
+
+import Foundation
+//定义的接口
+public class COAPIM {
+	//获取完整的url
+	public var url :String!
+	//方法名称,这是用来给COHttpOperation回调的
+	public var methodName :String!
+	// MARK: 工具函数
+	init(url:String,methodName:String){
+		self.url = url
+		self.methodName = methodName
+	}
+}

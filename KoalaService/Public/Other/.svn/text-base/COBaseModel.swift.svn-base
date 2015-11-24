@@ -1,0 +1,161 @@
+//
+//  COBaseModel.swift
+//  COXbry
+//
+//  Created by carlosk on 15/1/5.
+//  Copyright (c) 2015年 carlosk. All rights reserved.
+//
+
+import UIKit
+
+public class COBaseModel: NSObject {
+	//根据字典解析数据
+	init(json:NSDictionary){
+		super.init()
+		parseWithClass(self.classForCoder, json: json)
+	}
+	override init(){
+		super.init()
+	}
+	//把对象转换成json字符串
+	func converObjectToJsonString()->[String:AnyObject]{
+		//先转换成字典
+		//然后转换成json字符串
+		var outCount:UInt32 = UInt32()
+		let properties = class_copyPropertyList(self.classForCoder, &outCount);
+		let count = Int(outCount)
+		var dict = [String:AnyObject]()
+		for(var i = 0;i < count;i++){
+			let property = properties[i];
+			var key = String()
+			let keyPoint = property_getName(property)
+			let key1 = UnsafePointer<CChar>(keyPoint)
+			key = String.fromCString(key1)!
+			let value: AnyObject? = valueForKey(key)
+			if value != nil {
+				dict[key] = value!
+			}
+		}
+		return dict
+	}
+
+	
+	
+	func parseWithClass(mClass:AnyClass,json:NSDictionary){
+		var outCount:UInt32 = UInt32()
+
+		let properties = class_copyPropertyList(mClass, &outCount);
+		let count = Int(outCount)
+		for(var i = 0;i < count;i++){
+
+			let property = properties[i];
+			var key = String()
+			let keyPoint = property_getName(property)
+			let key1 = UnsafePointer<CChar>(keyPoint)
+			key = String.fromCString(key1)!
+			//如果class存在,则说明是自定义的
+//			let classsMethodSeleotor = Selector("\(key)Class")
+			//如果value不存在,说明key有变化,则根据指定的方法获取value
+			let value:AnyObject? = json[key]
+			if value == nil {
+//				let seletorStr = "\(key)Key"
+//				let seleotor = Selector(seletorStr)
+				// TODO: 暂时不考虑不同key的情况
+			}
+			if let value1: AnyObject = value{
+				if !(value1 is NSNull){
+					setValue(value, forKey: key)
+				}
+			}
+		}
+		
+	}
+//	- (void)parseWithClass:(Class )mClass1 withJsonContent:(NSDictionary *)json{
+//	
+//	#pragma clang diagnostic push
+//	#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+//	unsigned int outCount, i;
+//	objc_property_t *properties = class_copyPropertyList(mClass1, &outCount);
+//	for (i = 0; i < outCount; i++) {
+//	objc_property_t property = properties[i];
+//	NSString *key = [NSString stringWithFormat:@"%s",property_getName(property)];
+//	id value = [json objectForKey:key];
+//	//如果不存在,则查看是否有新的key
+//	if (value == [NSNull null]) {
+//	value = nil;
+//	}
+//	if (!value) {
+//	SEL newKeySEL = NSSelectorFromString([NSString stringWithFormat:@"%@Key",key]);
+//	if ([[self class] respondsToSelector:newKeySEL]) {
+//	NSString *newKey = [[self class] performSelector:newKeySEL];
+//	value = [json objectForKey:newKey];
+//	}
+//	}
+//	
+//	//如果value是array类型的，则解析成domain数组
+//	if ([value isKindOfClass:[NSArray class]] || [[[value class] description] isEqualToString:@"__NSCFArray"]) {
+//	if ([value count]) {
+//	NSLog(@"%@",[value[0] class]);
+//	if ([value[0] isKindOfClass:[NSDictionary class]] || [value[0] isKindOfClass:[NSString class]] || [[[value[0] class] description] isEqualToString:@"__NSCFDictionary"] || [[[value[0] class] description] isEqualToString:@"__NSCFNumber"] ) {
+//	NSMutableArray *selfArr = [[NSMutableArray alloc] init];
+//	//根据key的名字构造sel，sel必须以[key]ChildClass为名字，且返回class类型
+//	SEL classSel = NSSelectorFromString([NSString stringWithFormat:@"%@ChildClass",key]);
+//	//如果是Number类型的话
+//	Class eachClass = nil;
+//	if ([[self class] respondsToSelector:classSel]) {
+//	eachClass = [[self class] performSelector:classSel];
+//	}
+//	for (NSDictionary *dicValue in value) {
+//	if ([dicValue isKindOfClass:[NSNumber class]] || [value[0] isKindOfClass:[NSString class]] ) {
+//	[selfArr addObject:dicValue];
+//	}else if (eachClass){
+//	id eachObject = [[eachClass alloc] initWithJson:dicValue];
+//	[selfArr addObject:eachObject];
+//	}else{
+//	
+//	}
+//	
+//	}
+//	if (selfArr.count) {
+//	[self setValue:selfArr forKey:key];
+//	}
+//	
+//	}
+//	}
+//	}else
+//	//如果value是dictionary类型的，则解析成domain
+//	if ([value isKindOfClass:[NSDictionary class]] || [[[value class] description] isEqualToString:@"__NSCFDictionary"]) {
+//	//根据key的名字构造sel，sel必须以[key]Class为名字，且返回class类型
+//	SEL classSel = NSSelectorFromString([NSString stringWithFormat:@"%@Class",key]);
+//	//获取leix
+//	if ([[self class] respondsToSelector:classSel]) {
+//	Class domainClass = [[self class] performSelector:classSel];
+//	id domainObj = [[domainClass alloc] initWithJson:value];
+//	[self setValue:domainObj forKey:key];
+//	}
+//	}else{
+//	if (value) {
+//	//如果有查找value的方法,则查找
+//	SEL valueSel = NSSelectorFromString([NSString stringWithFormat:@"%@Value:",key]);
+//	if ([[self class] respondsToSelector:valueSel]) {
+//	id newValue = [[self class] performSelector:valueSel withObject:value];
+//	if (newValue) {
+//	value = newValue;
+//	}
+//	}
+//	if (![@"" isEqualToString:value]) {
+//	[self setValue:value forKey:key];
+//	}
+//	}
+//	
+//	}
+//	}
+//	free (properties);
+//	
+//	if ([mClass1 superclass]) {
+//	[self parseWithClass:[mClass1 superclass] withJsonContent:json];
+//	}
+//	#pragma clang diagnostic pop
+//	}
+
+}

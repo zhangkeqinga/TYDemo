@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/cloudalarm_ios/!svn/ver/166/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net
+END
+ThreadM.swift
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/cloudalarm_ios/!svn/ver/82/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/ThreadM.swift
+END
+QueryHttpOperation.swift
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/cloudalarm_ios/!svn/ver/82/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/QueryHttpOperation.swift
+END
+HttpConnect.swift
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/HttpConnect.swift
+END
+CommentHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/CommentHO.swift
+END
+BaseHttpOperation.swift
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/cloudalarm_ios/!svn/ver/145/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/BaseHttpOperation.swift
+END
+QueryHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/QueryHO.swift
+END
+PersonHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/cloudalarm_ios/!svn/ver/166/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/PersonHO.swift
+END
+SecurityHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/SecurityHO.swift
+END
+APIEnum.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/cloudalarm_ios/!svn/ver/166/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/APIEnum.swift
+END
+UserHttpOperation.swift
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/cloudalarm_ios/!svn/ver/145/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/UserHttpOperation.swift
+END
+HttpService.swift
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/HttpService.swift
+END
+BaseHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/cloudalarm_ios/!svn/ver/152/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/BaseHO.swift
+END
+DemoHttpOperation.swift
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/cloudalarm_ios/!svn/ver/120/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/DemoHttpOperation.swift
+END
+TopicHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/cloudalarm_ios/!svn/ver/166/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/TopicHO.swift
+END
+UserHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/UserHO.swift
+END
+KnowledgeHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/cloudalarm_ios/!svn/ver/166/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/KnowledgeHO.swift
+END
+DemoHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/DemoHO.swift
+END
+AlarmHttpOperation.swift
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/cloudalarm_ios/!svn/ver/145/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/AlarmHttpOperation.swift
+END
+DeployHttpOperation.swift
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/cloudalarm_ios/!svn/ver/82/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/DeployHttpOperation.swift
+END
+AlarmHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/AlarmHO.swift
+END
+DeployHO.swift
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/cloudalarm_ios/!svn/ver/158/development/source/TYAlarmCloud_iOS_New/TYCloudAlarm/Net/DeployHO.swift
+END

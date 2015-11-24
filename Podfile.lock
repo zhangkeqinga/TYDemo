@@ -1,0 +1,57 @@
+PODS:
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
+    - ASIHTTPRequest/CloudFiles (= 1.8.2)
+    - ASIHTTPRequest/Core (= 1.8.2)
+    - ASIHTTPRequest/S3 (= 1.8.2)
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - HLHanZiToPinYin (0.0.1)
+  - IQKeyboardManager (3.2.1.2)
+  - LKDBHelper (2.1.6):
+    - FMDB
+  - MBProgressHUD (0.9.1)
+  - MSDynamicsDrawerViewController (1.5.1)
+  - Reachability (3.2)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - SVPullToRefresh (0.4.1)
+  - YLTextView (0.2)
+
+DEPENDENCIES:
+  - ASIHTTPRequest
+  - HLHanZiToPinYin
+  - IQKeyboardManager (~> 3.2.1.1)
+  - LKDBHelper
+  - MBProgressHUD
+  - MSDynamicsDrawerViewController
+  - SDWebImage
+  - SVPullToRefresh
+  - YLTextView
+
+SPEC CHECKSUMS:
+  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  HLHanZiToPinYin: ab5de40dd0f2f82886e1db76af2a90d26f614dd5
+  IQKeyboardManager: 4adcd7cc9c17440a7cb74755f6f6c8389919c6bf
+  LKDBHelper: 6df8665e44ff444836dcae89dcd095ffc7f9de48
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  YLTextView: c0fab7bc15c74d2b098c34df05f1a59bc3144e7f
+
+COCOAPODS: 0.39.0
